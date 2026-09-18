@@ -8,264 +8,295 @@
 <meta property="og:title" content="第1000回 経営者モーニングセミナー｜講師 池端克章 氏">
 <meta property="og:description" content="2026年10月1日（木）朝6時、ホテルマリターレ創世。テーマ「倫理指導の実践で起こった奇跡」。参加費無料、どなたでも参加できます。">
 <meta property="og:type" content="website">
+<meta property="og:image" content="assets/speaker-hero.jpg">
+<meta name="theme-color" content="#17472f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   color-scheme: light;
-  --night:#131d31;
-  --night-deep:#0c1422;
-  --ink:#10221c;
-  --paper:#f7f4ec;
-  --paper-warm:#efe9db;
-  --sumi:#241f1a;
-  --sumi-soft:#5a5248;
-  --gold:#a6813a;
-  --brass:#d8c491;
-  --line:rgba(36,31,26,.16);
-  --line-night:rgba(216,196,145,.28);
-  --maxw:74rem;
+  --green-deep:#0e3123;
+  --green:#17472f;
+  --green-mid:#1f5b3e;
+  --gold:#b08d3c;
+  --gold-l:#d8bd7c;
+  --gold-pale:#eadfc2;
+  --cream:#f7f3e9;
+  --cream-2:#efe8d8;
+  --white:#ffffff;
+  --ink:#23302a;
+  --muted:#5e6d63;
+  --line:rgba(35,48,42,.14);
+  --line-gold:rgba(176,141,60,.38);
+  --maxw:70rem;
   --serif:"Shippori Mincho",serif;
   --sans:"Zen Kaku Gothic New",system-ui,sans-serif;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){ color-scheme: light; }
-}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ color-scheme: light; } }
 :root[data-theme="dark"]{ color-scheme: light; }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;
-  background:var(--paper);
-  color:var(--sumi);
-  font-family:var(--sans);
-  font-size:16px;
-  line-height:1.9;
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.9;
   -webkit-font-smoothing:antialiased;
 }
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  *{animation:none !important; transition:none !important}
-}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none !important;transition:none !important} }
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 .wrap{width:min(100% - 2.5rem, var(--maxw));margin-inline:auto}
 .narrow{width:min(100% - 2.5rem, 48rem);margin-inline:auto}
-
-/* ---------- 夜明け前：ヒーロー ---------- */
-.dawn{
-  background:var(--night);
-  color:var(--paper);
-  position:relative;
-  overflow:hidden;
-  padding:clamp(2.5rem,7vw,5rem) 0 0;
-}
-.dawn::after{
-  content:"";
-  position:absolute;left:0;right:0;bottom:0;height:9rem;
-  background:linear-gradient(to bottom, rgba(247,244,236,0) 0%, var(--paper) 100%);
-  pointer-events:none;
-}
-.masthead{
-  display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;align-items:baseline;
-  font-size:.875rem;letter-spacing:.08em;color:var(--brass);
-  border-bottom:1px solid var(--line-night);padding-bottom:1rem;
-}
-.masthead .count{font-family:var(--serif);font-size:1rem}
-.hero{padding:clamp(3rem,9vw,6.5rem) 0 clamp(5rem,12vw,9rem);position:relative;z-index:1}
-.hero-theme{
-  font-family:var(--serif);font-weight:800;
-  font-size:clamp(2.1rem,7.2vw,4.4rem);
-  line-height:1.32;letter-spacing:.02em;margin:0 0 1.5rem;
-  text-wrap:balance;
-}
-.horizon{
-  height:1px;background:linear-gradient(to right,var(--gold),var(--brass) 38%,rgba(216,196,145,0));
-  margin:0 0 1.75rem;transform-origin:left;
-  animation:draw 1.5s cubic-bezier(.16,.84,.44,1) both;
-}
-@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.hero-sub{font-family:var(--serif);font-size:clamp(1.05rem,2.6vw,1.375rem);margin:0 0 2.5rem;color:var(--brass)}
-.hero-facts{
-  display:grid;gap:1.75rem 3rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));
-  margin:0 0 2.75rem;
-}
-.fact dt{font-size:.8125rem;color:var(--brass);margin-bottom:.35rem}
-.fact dd{margin:0;font-family:var(--serif);font-size:1.1875rem;line-height:1.6}
-.fact dd small{display:block;font-family:var(--sans);font-size:.875rem;color:rgba(247,244,236,.72);margin-top:.15rem}
-.fact .big{font-size:1.625rem}
-
-.actions{display:flex;flex-wrap:wrap;gap:.875rem}
-.btn{
-  display:inline-block;padding:.95rem 2.1rem;border-radius:2px;
-  font-family:var(--sans);font-weight:700;font-size:1rem;text-decoration:none;
-  border:1px solid var(--gold);background:var(--gold);color:#12100c;
-  transition:background .18s ease,color .18s ease;
-}
-.btn:hover{background:var(--brass);border-color:var(--brass)}
-.btn-ghost{background:transparent;color:var(--brass)}
-.btn-ghost:hover{background:rgba(216,196,145,.12);color:var(--paper)}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
+/* ---------- 帯 ---------- */
+.topband{background:var(--green);color:var(--cream);border-bottom:3px solid var(--gold)}
+.topband .wrap{display:flex;justify-content:center;padding:.9rem 0}
+.topband .org{font-family:var(--serif);font-size:clamp(1rem,2.6vw,1.25rem);letter-spacing:.16em}
+
+/* ---------- ヒーロー ---------- */
+.hero{background:var(--cream);padding:clamp(2.5rem,6vw,4rem) 0 0;position:relative}
+.hero-head{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+.hero-titles{text-align:center}
+
+.kaisu{display:flex;align-items:center;justify-content:center;gap:.5rem;color:var(--gold);margin-bottom:.35rem}
+.kaisu .n{font-family:var(--serif);font-weight:800;font-size:clamp(1.6rem,4.6vw,2.4rem);letter-spacing:.04em;line-height:1}
+.laurel{width:clamp(1.9rem,5vw,2.7rem);height:auto;flex:none}
+.laurel.r{transform:scaleX(-1)}
+
+.brsp{display:none}
+h1.title{
+  font-family:var(--serif);font-weight:800;color:var(--green);
+  font-size:clamp(1.9rem,6.4vw,3.6rem);line-height:1.25;letter-spacing:.03em;
+  margin:0 0 1.25rem;text-wrap:balance;
+}
+.ribbon{
+  display:block;max-width:44rem;margin:0 auto;
+  background:linear-gradient(180deg,var(--gold-l),var(--gold));
+  color:#17301f;font-family:var(--serif);font-weight:600;
+  font-size:clamp(.95rem,2.9vw,1.375rem);line-height:1.5;
+  padding:.65rem 2.4rem;letter-spacing:.04em;
+  clip-path:polygon(0 0,100% 0,calc(100% - 20px) 50%,100% 100%,0 100%,20px 50%);
+}
+.datebadge{
+  flex:none;width:clamp(7rem,17vw,9.5rem);aspect-ratio:1;border-radius:50%;
+  background:var(--green);color:var(--cream);border:2px solid var(--gold);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:var(--serif);line-height:1.15;box-shadow:0 6px 22px rgba(14,49,35,.18);
+}
+.datebadge .y{font-size:.8125rem;letter-spacing:.1em;color:var(--gold-l)}
+.datebadge .d{font-size:clamp(1.9rem,5.4vw,2.9rem);font-weight:800;letter-spacing:.01em}
+.datebadge .w{font-size:.875rem}
+
+.herophoto{
+  margin:clamp(2rem,5vw,3rem) auto 0;max-width:46rem;
+  border:1px solid var(--line-gold);padding:.5rem;background:var(--white);
+}
+.herophoto img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 32%}
+.herophoto figcaption{
+  font-size:.8125rem;color:var(--muted);text-align:center;padding:.6rem .5rem .2rem;
+}
+
+.actions{display:flex;flex-wrap:wrap;gap:.875rem;justify-content:center;padding:clamp(2rem,5vw,2.75rem) 0 clamp(2.5rem,6vw,4rem)}
+.btn{
+  display:inline-block;padding:.95rem 2.2rem;border-radius:2px;
+  font-family:var(--sans);font-weight:700;font-size:1rem;text-decoration:none;
+  border:1px solid var(--green);background:var(--green);color:var(--cream);
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
+}
+.btn:hover{background:var(--green-mid);border-color:var(--green-mid)}
+.btn-ghost{background:transparent;color:var(--green);border-color:var(--gold)}
+.btn-ghost:hover{background:var(--cream-2);color:var(--green)}
+
 /* ---------- セクション共通 ---------- */
-section{padding:clamp(3.5rem,9vw,6rem) 0}
+section{padding:clamp(3.25rem,8vw,5.5rem) 0}
 .sec-label{
-  font-family:var(--serif);font-size:1rem;color:var(--gold);
-  margin:0 0 .5rem;
+  display:inline-block;font-family:var(--serif);font-size:.9375rem;
+  color:var(--cream);background:var(--green);padding:.2rem 1.1rem;
+  letter-spacing:.14em;margin:0 0 1rem;
 }
 h2{
-  font-family:var(--serif);font-weight:800;
-  font-size:clamp(1.5rem,4.2vw,2.125rem);line-height:1.45;
-  margin:0 0 2rem;letter-spacing:.02em;
+  font-family:var(--serif);font-weight:800;color:var(--green);
+  font-size:clamp(1.45rem,4.2vw,2.125rem);line-height:1.45;
+  margin:0 0 2rem;letter-spacing:.03em;
 }
+h2 .rule{display:block;width:3.5rem;height:2px;background:var(--gold);margin-top:.85rem}
 p{margin:0 0 1.4rem}
 .lead{font-family:var(--serif);font-size:1.0625rem;line-height:2.1}
 
 /* ---------- 講師 ---------- */
-.speaker{border-top:1px solid var(--line)}
-.speaker-grid{display:grid;gap:2.5rem;grid-template-columns:auto 1fr;align-items:start}
-.namecol{display:flex;gap:1.25rem;align-items:flex-start}
-.name-ja{
-  writing-mode:vertical-rl;font-family:var(--serif);font-weight:800;
-  font-size:clamp(2.4rem,5vw,3.4rem);letter-spacing:.14em;line-height:1;
-  margin:0;white-space:nowrap;
-}
-.name-ja .suffix{font-size:.5em;letter-spacing:.1em}
-.name-en{
-  writing-mode:vertical-rl;font-family:var(--serif);font-size:.8125rem;
-  letter-spacing:.22em;color:var(--sumi-soft);margin-top:.35rem;white-space:nowrap;
-}
+.speaker{background:var(--white)}
+.speaker-grid{display:grid;gap:clamp(1.75rem,4vw,3rem);grid-template-columns:20rem 1fr;align-items:start}
+.portrait{border:1px solid var(--line-gold);padding:.5rem;background:var(--cream)}
+.portrait img{width:100%}
+.portrait figcaption{font-size:.8125rem;color:var(--muted);text-align:center;padding:.55rem .4rem .15rem}
+.name-ja{font-family:var(--serif);font-weight:800;font-size:clamp(2rem,5.4vw,2.9rem);letter-spacing:.1em;line-height:1.25;margin:0;color:var(--green)}
+.name-ja .suffix{font-size:.52em;letter-spacing:.08em}
+.name-en{font-family:var(--serif);font-size:.8125rem;letter-spacing:.22em;color:var(--muted);margin:.3rem 0 1.5rem}
 .twofaces{display:grid;gap:0;border-top:1px solid var(--line)}
-.face{padding:1.5rem 0;border-bottom:1px solid var(--line)}
-.face h3{font-family:var(--serif);font-size:1.1875rem;margin:0 0 .4rem;font-weight:600}
-.face p{margin:0;font-size:.9375rem;color:var(--sumi-soft);line-height:1.85}
-.bridge{
-  font-family:var(--serif);font-size:1.0625rem;line-height:2.1;
-  margin:1.75rem 0 0;
-}
+.face{padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.face h3{font-family:var(--serif);font-size:1.125rem;margin:0 0 .4rem;font-weight:600;color:var(--green-mid)}
+.face p{margin:0;font-size:.9375rem;color:var(--muted);line-height:1.85}
+.bridge{font-family:var(--serif);font-size:1.0625rem;line-height:2.1;margin:1.6rem 0 0}
 .quote{
-  margin:2.75rem 0 0;padding:1.75rem 0 0;border-top:1px solid var(--line);
-  font-family:var(--serif);font-size:1.0625rem;line-height:2.15;
+  margin:2rem 0 0;padding:1.5rem 1.6rem;background:var(--cream);
+  border-left:3px solid var(--gold);
+  font-family:var(--serif);font-size:1.0625rem;line-height:2.1;
 }
-.quote p{margin:0 0 .9rem}
-.quote cite{font-style:normal;font-size:.875rem;font-family:var(--sans);color:var(--sumi-soft)}
+.quote p{margin:0 0 .8rem}
+.quote cite{font-style:normal;font-size:.875rem;font-family:var(--sans);color:var(--muted)}
+
+/* ---------- 開催概要カード ---------- */
+.detail{background:var(--cream-2)}
+.cards{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-bottom:2.25rem}
+.card{background:var(--white);border:1px solid var(--line-gold);padding:1.5rem 1.4rem}
+.card .ttl{display:flex;align-items:center;gap:.5rem;color:var(--gold);font-family:var(--serif);font-size:1rem;margin-bottom:.6rem}
+.card .ttl svg{width:1.15rem;height:1.15rem;flex:none}
+.card .big{font-family:var(--serif);font-size:clamp(1.25rem,3.4vw,1.5rem);color:var(--green);line-height:1.5;margin:0 0 .3rem}
+.card .sub{font-size:.875rem;color:var(--muted);margin:0;line-height:1.75}
+.infolist{margin:0;border-top:1px solid var(--line)}
+.inforow{display:grid;grid-template-columns:7rem 1fr;gap:1.25rem;padding:1.05rem 0;border-bottom:1px solid var(--line)}
+.inforow dt{font-size:.875rem;color:var(--gold)}
+.inforow dd{margin:0;font-size:1rem;line-height:1.8}
+.inforow dd .em{font-family:var(--serif);font-size:1.1875rem;color:var(--green)}
+.inforow a{color:var(--green-mid);text-underline-offset:.25em}
 
 /* ---------- 年表 ---------- */
-.history{background:var(--paper-warm)}
+.history{background:var(--white)}
 .years{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
-.years li{
-  display:grid;grid-template-columns:5.5rem 1fr;gap:1.25rem;
-  padding:1.1rem 0;border-bottom:1px solid var(--line);
-}
+.years li{display:grid;grid-template-columns:5.5rem 1fr;gap:1.25rem;padding:1.05rem 0;border-bottom:1px solid var(--line)}
 .years .y{font-family:var(--serif);font-size:1.0625rem;color:var(--gold);line-height:1.7}
 .years .t{margin:0;font-size:.9375rem;line-height:1.85}
 
 /* ---------- 楽曲 ---------- */
 .songs{margin:0;padding:0;list-style:none}
-.songs li{padding:1rem 0;border-bottom:1px solid var(--line);display:grid;gap:.15rem}
-.songs .title{font-family:var(--serif);font-size:1.125rem}
-.songs .title span{font-size:.8125rem;color:var(--sumi-soft);font-family:var(--sans);margin-left:.6rem}
-.songs .use{font-size:.875rem;color:var(--sumi-soft)}
-.albums{margin:1.75rem 0 0;font-size:.9375rem;color:var(--sumi-soft)}
-.links{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.75rem;font-size:.9375rem}
-.links a{color:var(--gold);text-underline-offset:.3em}
+.songs li{padding:.95rem 0;border-bottom:1px solid var(--line);display:grid;gap:.1rem}
+.songs .title{font-family:var(--serif);font-size:1.125rem;color:var(--green)}
+.songs .title span{font-size:.8125rem;color:var(--muted);font-family:var(--sans);margin-left:.6rem}
+.songs .use{font-size:.875rem;color:var(--muted)}
+.albums{margin:1.6rem 0 0;font-size:.9375rem;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:1.6rem;font-size:.9375rem}
+.links a{color:var(--green-mid);text-underline-offset:.3em}
 
-/* ---------- 開催概要 ---------- */
-.detail{background:var(--ink);color:var(--paper)}
-.detail h2{color:var(--paper)}
-.detail .sec-label{color:var(--brass)}
-.infolist{margin:0;border-top:1px solid var(--line-night)}
-.inforow{display:grid;grid-template-columns:7rem 1fr;gap:1.25rem;padding:1.1rem 0;border-bottom:1px solid var(--line-night)}
-.inforow dt{font-size:.875rem;color:var(--brass)}
-.inforow dd{margin:0;font-size:1rem;line-height:1.8}
-.inforow dd .em{font-family:var(--serif);font-size:1.25rem}
-.inforow a{color:var(--brass)}
+/* ---------- チラシ ---------- */
+.flyer{background:var(--cream-2);text-align:center}
+.flyer figure{margin:0 auto;max-width:30rem;border:1px solid var(--line-gold);padding:.5rem;background:var(--white)}
+.flyer figcaption{font-size:.8125rem;color:var(--muted);padding:.6rem .4rem .15rem}
 
 /* ---------- 申込フォーム ---------- */
-.apply{background:var(--ink);color:var(--paper);padding-top:0}
-.formcard{border:1px solid var(--line-night);padding:clamp(1.5rem,4vw,2.5rem)}
-.field{margin-bottom:1.35rem}
-.field label{display:block;font-size:.875rem;margin-bottom:.4rem;color:var(--brass)}
-.req{color:#e8b4a0;font-size:.75rem;margin-left:.4rem}
+.apply{background:var(--green)}
+.apply h2{color:var(--cream)}
+.apply h2 .rule{background:var(--gold-l)}
+.apply .sec-label{background:var(--gold);color:#17301f}
+.formcard{border:1px solid rgba(216,189,124,.3);padding:clamp(1.4rem,4vw,2.5rem);color:var(--cream)}
+.field{margin-bottom:1.3rem}
+.field label{display:block;font-size:.875rem;margin-bottom:.4rem;color:var(--gold-l)}
+.req{color:#f0b9a2;font-size:.75rem;margin-left:.4rem}
 input[type=text],input[type=tel],input[type=email],input[type=number],select,textarea{
   width:100%;padding:.8rem .9rem;font:inherit;font-size:1rem;
-  background:#f7f4ec;color:var(--sumi);
-  border:1px solid rgba(216,196,145,.4);border-radius:2px;
+  background:var(--cream);color:var(--ink);
+  border:1px solid rgba(216,189,124,.45);border-radius:2px;
 }
 textarea{min-height:6rem;resize:vertical}
-.row2{display:grid;gap:1.35rem;grid-template-columns:1fr 1fr}
+.row2{display:grid;gap:1.3rem;grid-template-columns:1fr 1fr}
 .radios{display:flex;gap:1.5rem;flex-wrap:wrap;padding-top:.2rem}
-.radios label{display:flex;align-items:center;gap:.45rem;color:var(--paper);font-size:1rem;margin:0}
+.radios label{display:flex;align-items:center;gap:.45rem;color:var(--cream);font-size:1rem;margin:0}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.note{font-size:.8125rem;color:rgba(247,244,236,.68);line-height:1.8}
+.note{font-size:.8125rem;color:rgba(247,243,233,.72);line-height:1.8}
+.apply .btn{background:var(--gold);border-color:var(--gold);color:#17301f}
+.apply .btn:hover{background:var(--gold-l);border-color:var(--gold-l)}
 .formmsg{margin-top:1.1rem;font-size:.9375rem;line-height:1.8;min-height:1.5rem}
-.formmsg.ok{color:var(--brass)}
-.formmsg.ng{color:#f0b7a4}
+.formmsg.ok{color:var(--gold-l)}
+.formmsg.ng{color:#f3bda6}
 button[type=submit]{cursor:pointer;font-family:var(--sans)}
 button[disabled]{opacity:.55;cursor:progress}
 
 /* ---------- 前夜祭 ---------- */
-.eve{background:var(--night-deep);color:var(--paper)}
-.eve h2{color:var(--paper)}
-.eve .sec-label{color:var(--brass)}
+.eve{background:var(--green-deep);color:var(--cream)}
+.eve h2{color:var(--cream)}
+.eve h2 .rule{background:var(--gold-l)}
+.eve .sec-label{background:var(--gold);color:#17301f}
 .eve-grid{display:grid;gap:2rem;grid-template-columns:1.1fr 1fr;align-items:start}
-.eve dl{margin:0}
+.eve .infolist{border-top-color:rgba(216,189,124,.28)}
+.eve .inforow{border-bottom-color:rgba(216,189,124,.28)}
+.eve .inforow dd .em{color:var(--cream)}
+.eve .inforow a{color:var(--gold-l)}
 .eve .note{margin-top:1rem}
-.soldout{
-  display:inline-block;border:1px solid var(--brass);color:var(--brass);
-  padding:.35rem .9rem;font-size:.8125rem;margin-bottom:1.25rem;
-}
+.soldout{display:inline-block;border:1px solid var(--gold-l);color:var(--gold-l);padding:.3rem .9rem;font-size:.8125rem;margin-bottom:1.1rem}
 
 /* ---------- フッター ---------- */
-footer{background:var(--paper-warm);padding:3rem 0;font-size:.875rem;color:var(--sumi-soft)}
-footer .org{font-family:var(--serif);font-size:1.0625rem;color:var(--sumi);margin-bottom:.5rem}
-footer a{color:var(--gold)}
-.copy{margin-top:2rem;font-size:.8125rem}
+footer{background:var(--green);color:var(--cream);padding:3rem 0;font-size:.875rem;border-top:3px solid var(--gold)}
+footer .org{font-family:var(--serif);font-size:1.125rem;letter-spacing:.1em;margin-bottom:.6rem}
+footer a{color:var(--gold-l)}
+.copy{margin-top:2rem;font-size:.8125rem;color:rgba(247,243,233,.6)}
 
-@media (max-width:760px){
-  .speaker-grid{grid-template-columns:1fr;gap:1.75rem}
-  .name-ja,.name-en{writing-mode:horizontal-tb}
-  .name-ja{letter-spacing:.06em}
-  .name-en{letter-spacing:.16em;margin-top:.5rem}
-  .namecol{flex-direction:column;gap:.25rem}
-  .row2{grid-template-columns:1fr}
+@media (max-width:820px){
+  .speaker-grid{grid-template-columns:1fr}
+  .portrait{max-width:18rem;margin-inline:auto}
   .eve-grid{grid-template-columns:1fr}
-  .years li{grid-template-columns:4.5rem 1fr;gap:.9rem}
-  .inforow{grid-template-columns:1fr;gap:.25rem}
+}
+@media (max-width:640px){
+  .hero-head{grid-template-columns:1fr;justify-items:center;gap:1.5rem}
+  .hero-titles{order:2}
+  .datebadge{order:1}
+  .row2{grid-template-columns:1fr}
+  .years li{grid-template-columns:4.25rem 1fr;gap:.9rem}
+  .inforow{grid-template-columns:1fr;gap:.2rem}
+  .ribbon{padding-inline:1.8rem}
+  .brsp{display:inline}
 }
 </style>
 </head>
 <body>
 
-<header class="dawn">
+<div class="topband">
+  <div class="wrap"><p class="org">久留米市東倫理法人会</p></div>
+</div>
+
+<header class="hero">
   <div class="wrap">
-    <div class="masthead">
-      <span>久留米市東倫理法人会</span>
-      <span class="count">第1000回 経営者モーニングセミナー</span>
+    <div class="hero-head">
+      <div class="hero-titles">
+        <p class="kaisu">
+          <svg class="laurel" viewBox="0 0 44 64" aria-hidden="true">
+            <path d="M36 62 C24 50 15 34 15 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <g fill="currentColor">
+              <ellipse cx="24" cy="53" rx="6.5" ry="2.7" transform="rotate(-35 24 53)"/>
+              <ellipse cx="18.5" cy="44" rx="6.5" ry="2.7" transform="rotate(-45 18.5 44)"/>
+              <ellipse cx="14" cy="33.5" rx="6.5" ry="2.7" transform="rotate(-58 14 33.5)"/>
+              <ellipse cx="11" cy="21" rx="6.5" ry="2.7" transform="rotate(-70 11 21)"/>
+              <ellipse cx="10" cy="9" rx="6" ry="2.5" transform="rotate(-82 10 9)"/>
+            </g>
+          </svg>
+          <span class="n">第1000回</span>
+          <svg class="laurel r" viewBox="0 0 44 64" aria-hidden="true">
+            <path d="M36 62 C24 50 15 34 15 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <g fill="currentColor">
+              <ellipse cx="24" cy="53" rx="6.5" ry="2.7" transform="rotate(-35 24 53)"/>
+              <ellipse cx="18.5" cy="44" rx="6.5" ry="2.7" transform="rotate(-45 18.5 44)"/>
+              <ellipse cx="14" cy="33.5" rx="6.5" ry="2.7" transform="rotate(-58 14 33.5)"/>
+              <ellipse cx="11" cy="21" rx="6.5" ry="2.7" transform="rotate(-70 11 21)"/>
+              <ellipse cx="10" cy="9" rx="6" ry="2.5" transform="rotate(-82 10 9)"/>
+            </g>
+          </svg>
+        </p>
+        <h1 class="title">経営者<br class="brsp">モーニングセミナー</h1>
+        <p class="ribbon">テーマ：倫理指導の実践で起こった奇跡</p>
+      </div>
+
+      <p class="datebadge">
+        <span class="y">2026</span>
+        <span class="d">10/1</span>
+        <span class="w">（木）</span>
+      </p>
     </div>
-  </div>
 
-  <div class="wrap hero">
-    <h1 class="hero-theme">倫理指導の実践で<br>起こった奇跡</h1>
-    <div class="horizon"></div>
-    <p class="hero-sub">講師：池端 克章 氏（北九州市倫理法人会 事務長／株式会社BESTIE 代表取締役）</p>
-
-    <dl class="hero-facts">
-      <div class="fact">
-        <dt>開催日時</dt>
-        <dd class="big">2026年10月1日（木）<small>6:00 〜 7:00（開場 5:40）</small></dd>
-      </div>
-      <div class="fact">
-        <dt>会場</dt>
-        <dd>ホテルマリターレ創世<small>福岡県久留米市東櫛原町900／駐車場あり</small></dd>
-      </div>
-      <div class="fact">
-        <dt>参加費</dt>
-        <dd>無料<small>終了後の朝食は500円（希望制）</small></dd>
-      </div>
-    </dl>
+    <figure class="herophoto">
+      <img src="assets/speaker-hero.jpg" width="678" height="452"
+           alt="ギターを手にした講師の池端克章氏">
+      <figcaption>講師：池端 克章 氏（北九州市倫理法人会 事務長／株式会社BESTIE 代表取締役）</figcaption>
+    </figure>
 
     <div class="actions">
       <a class="btn" href="#apply">参加を申し込む</a>
@@ -280,13 +311,19 @@ footer a{color:var(--gold)}
 <section id="speaker" class="speaker">
   <div class="wrap">
     <p class="sec-label">講師</p>
+    <h2>歌う経営者、池端 克章<span class="rule"></span></h2>
+
     <div class="speaker-grid">
-      <div class="namecol">
-        <p class="name-ja">池端 克章<span class="suffix"> 氏</span></p>
-        <p class="name-en">Katsuaki Ikehata</p>
-      </div>
+      <figure class="portrait">
+        <img src="assets/speaker-portrait.jpg" width="432" height="709"
+             alt="倫理法人会の会場でギターを持つ池端克章氏">
+        <figcaption>倫理法人会での登壇のようす</figcaption>
+      </figure>
 
       <div>
+        <p class="name-ja">池端 克章<span class="suffix"> 氏</span></p>
+        <p class="name-en">Katsuaki Ikehata</p>
+
         <div class="twofaces">
           <div class="face">
             <h3>北九州市倫理法人会 事務長／株式会社BESTIE 代表取締役</h3>
@@ -301,7 +338,7 @@ footer a{color:var(--gold)}
         <p class="bridge">経営者として倫理を実践する人であり、歌で人の心を動かしてきた人でもある。その二つが交わったところに、今回のテーマ「倫理指導の実践で起こった奇跡」があります。</p>
 
         <blockquote class="quote">
-          <p>倫理指導の実践で仕事も家庭も人生が大きく好転しました。その覚悟の実践や起こった変化についてお話させて頂きます。</p>
+          <p>『倫理指導の実践で仕事も家庭も人生が大きく好転しました。その覚悟の実践や起こった変化についてお話させて頂きます。』</p>
           <cite>池端 克章 氏</cite>
         </blockquote>
       </div>
@@ -309,11 +346,53 @@ footer a{color:var(--gold)}
   </div>
 </section>
 
+<!-- 開催概要 -->
+<section id="detail" class="detail">
+  <div class="wrap">
+    <p class="sec-label">開催概要</p>
+    <h2>第1000回 経営者モーニングセミナー<span class="rule"></span></h2>
+
+    <div class="cards">
+      <div class="card">
+        <p class="ttl">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          会場
+        </p>
+        <p class="big">ホテルマリターレ創世</p>
+        <p class="sub">福岡県久留米市東櫛原町900<br>※駐車場あり</p>
+      </div>
+      <div class="card">
+        <p class="ttl">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.8V12l3.4 2.2" stroke-linecap="round"/></svg>
+          開催日時
+        </p>
+        <p class="big">2026年10月1日（木）</p>
+        <p class="sub">AM 6:00 〜 7:00（開場 5:40）</p>
+      </div>
+      <div class="card">
+        <p class="ttl">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9z"/><path d="M16 10.5h2a2.5 2.5 0 0 1 0 5h-.6" stroke-linecap="round"/><path d="M8 3.5v2M12 3.5v2" stroke-linecap="round"/></svg>
+          参加費
+        </p>
+        <p class="big">セミナー参加費無料</p>
+        <p class="sub">※終了後の朝食をご希望の方は ¥500</p>
+      </div>
+    </div>
+
+    <dl class="infolist">
+      <div class="inforow"><dt>テーマ</dt><dd><span class="em">倫理指導の実践で起こった奇跡</span></dd></div>
+      <div class="inforow"><dt>会場案内</dt><dd>福岡県久留米市東櫛原町900　駐車場あり<br><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%9E%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%AC%E5%89%B5%E4%B8%96+%E4%B9%85%E7%95%99%E7%B1%B3" target="_blank" rel="noopener">地図を開く</a></dd></div>
+      <div class="inforow"><dt>対象</dt><dd>どなたでも参加できます。会員以外の方も歓迎します。</dd></div>
+      <div class="inforow"><dt>主催</dt><dd>久留米市東倫理法人会</dd></div>
+    </dl>
+  </div>
+</section>
+
 <!-- 歩み -->
 <section class="history">
   <div class="narrow">
     <p class="sec-label">歩み</p>
-    <h2>路上から、4万人の前まで</h2>
+    <h2>路上から、4万人の前まで<span class="rule"></span></h2>
     <ul class="years">
       <li><span class="y">2013</span><p class="t">旧・九州厚生年金会館（現ソレイユホール）で2,000人規模の単独コンサートを成功させる。同年、関門海峡花火大会の公式テーマソングを作詞作曲。</p></li>
       <li><span class="y">2015</span><p class="t">CDが全国リリースとなりカラオケ配信もスタート。記念の全国ツアーを8都市で開催。</p></li>
@@ -334,7 +413,7 @@ footer a{color:var(--gold)}
 <section>
   <div class="narrow">
     <p class="sec-label">手がけた楽曲</p>
-    <h2>まちと企業のうた</h2>
+    <h2>まちと企業のうた<span class="rule"></span></h2>
     <ul class="songs">
       <li><span class="title">手をつなごう</span><span class="use">福岡県倫理法人会40周年記念テーマソング</span></li>
       <li><span class="title">SKY FLOWER<span>2013</span></span><span class="use">関門海峡花火大会 公式テーマソング</span></li>
@@ -353,27 +432,27 @@ footer a{color:var(--gold)}
   </div>
 </section>
 
-<!-- 開催概要 -->
-<section id="detail" class="detail">
-  <div class="narrow">
-    <p class="sec-label">開催概要</p>
-    <h2>第1000回 経営者モーニングセミナー</h2>
-    <dl class="infolist">
-      <div class="inforow"><dt>テーマ</dt><dd class="em">倫理指導の実践で起こった奇跡</dd></div>
-      <div class="inforow"><dt>日時</dt><dd><span class="em">2026年10月1日（木）6:00 〜 7:00</span></dd></div>
-      <div class="inforow"><dt>会場</dt><dd>ホテルマリターレ創世<br>福岡県久留米市東櫛原町900　駐車場あり<br><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%9E%E3%83%AA%E3%82%BF%E3%83%BC%E3%83%AC%E5%89%B5%E4%B8%96+%E4%B9%85%E7%95%99%E7%B1%B3" target="_blank" rel="noopener">地図を開く</a></dd></div>
-      <div class="inforow"><dt>参加費</dt><dd>無料　※終了後の朝食をご希望の方は500円</dd></div>
-      <div class="inforow"><dt>対象</dt><dd>どなたでも参加できます。会員以外の方も歓迎します。</dd></div>
-      <div class="inforow"><dt>主催</dt><dd>久留米市東倫理法人会</dd></div>
-    </dl>
+<!-- チラシ -->
+<section class="flyer">
+  <div class="wrap">
+    <p class="sec-label">ご案内</p>
+    <h2 style="text-align:center">チラシ</h2>
+    <figure>
+      <a href="assets/flyer.jpg" target="_blank" rel="noopener">
+        <img src="assets/flyer.jpg" width="750" height="1035"
+             alt="第1000回 経営者モーニングセミナー 告知チラシ">
+      </a>
+      <figcaption>画像をクリックすると大きく表示されます。印刷してご活用ください。</figcaption>
+    </figure>
   </div>
 </section>
 
 <!-- 申込 -->
 <section id="apply" class="apply">
   <div class="narrow">
+    <p class="sec-label">お申込</p>
+    <h2>参加を申し込む<span class="rule"></span></h2>
     <div class="formcard">
-      <h2>参加を申し込む</h2>
       <p class="note" style="margin-bottom:1.75rem">申込がなくても当日ご参加いただけますが、朝食の準備がありますので、事前にお知らせいただけると助かります。</p>
 
       <form id="applyForm" novalidate>
@@ -451,7 +530,7 @@ footer a{color:var(--gold)}
 <section class="eve">
   <div class="wrap">
     <p class="sec-label">前夜祭</p>
-    <h2>第1000回MS前夜祭 LIVE懇親会</h2>
+    <h2>第1000回MS前夜祭 LIVE懇親会<span class="rule"></span></h2>
     <div class="eve-grid">
       <div>
         <span class="soldout">定員20名・残席わずか</span>
