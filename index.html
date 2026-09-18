@@ -217,7 +217,14 @@ button[disabled]{opacity:.55;cursor:progress}
 .eve h2{color:var(--cream)}
 .eve h2 .rule{background:var(--gold-l)}
 .eve .sec-label{background:var(--gold);color:#17301f}
-.eve-grid{display:grid;gap:2rem;grid-template-columns:1.1fr 1fr;align-items:start}
+.eve-grid{display:grid;gap:clamp(1.75rem,4vw,3rem);grid-template-columns:20rem 1fr;align-items:start}
+.eve-flyer{margin:0;border:1px solid rgba(216,189,124,.35);padding:.5rem;background:rgba(255,255,255,.05)}
+.eve-flyer img{width:100%}
+.eve-flyer figcaption{font-size:.8125rem;color:rgba(247,243,233,.6);text-align:center;padding:.55rem .4rem .15rem}
+.eve-quote{margin:1.4rem 0 1.75rem;padding:1.1rem 1.3rem;background:rgba(255,255,255,.05);border-left:3px solid var(--gold-l);font-family:var(--serif);font-size:1rem;line-height:2}
+.eve-quote p{margin:0 0 .55rem}
+.eve-quote cite{font-style:normal;font-size:.8125rem;font-family:var(--sans);color:rgba(247,243,233,.72)}
+ruby rt{font-size:.5em;color:var(--gold-l);font-weight:400}
 .eve .infolist{border-top-color:rgba(216,189,124,.28)}
 .eve .inforow{border-bottom-color:rgba(216,189,124,.28)}
 .eve .inforow dd .em{color:var(--cream)}
@@ -315,7 +322,7 @@ footer a{color:var(--gold-l)}
 
     <div class="speaker-grid">
       <figure class="portrait">
-        <img src="assets/speaker-portrait.jpg" width="432" height="709"
+        <img src="assets/speaker-portrait.jpg" width="432" height="709" loading="lazy"
              alt="倫理法人会の会場でギターを持つ池端克章氏">
         <figcaption>倫理法人会での登壇のようす</figcaption>
       </figure>
@@ -436,10 +443,10 @@ footer a{color:var(--gold-l)}
 <section class="flyer">
   <div class="wrap">
     <p class="sec-label">ご案内</p>
-    <h2 style="text-align:center">チラシ</h2>
+    <h2 style="text-align:center">セミナーのチラシ</h2>
     <figure>
       <a href="assets/flyer.jpg" target="_blank" rel="noopener">
-        <img src="assets/flyer.jpg" width="750" height="1035"
+        <img src="assets/flyer.jpg" width="750" height="1035" loading="lazy"
              alt="第1000回 経営者モーニングセミナー 告知チラシ">
       </a>
       <figcaption>画像をクリックすると大きく表示されます。印刷してご活用ください。</figcaption>
@@ -532,16 +539,28 @@ footer a{color:var(--gold-l)}
     <p class="sec-label">前夜祭</p>
     <h2>第1000回MS前夜祭 LIVE懇親会<span class="rule"></span></h2>
     <div class="eve-grid">
+      <figure class="eve-flyer">
+        <a href="assets/flyer-eve.jpg" target="_blank" rel="noopener">
+          <img src="assets/flyer-eve.jpg" width="750" height="1040" loading="lazy"
+               alt="第1000回MS前夜祭 LIVE懇親会 告知チラシ">
+        </a>
+        <figcaption>画像をクリックすると大きく表示されます</figcaption>
+      </figure>
+
       <div>
         <span class="soldout">定員20名・残席わずか</span>
-        <p class="lead">セミナーの前夜、池端克章さんのライブと懇親会を開きます。福岡県倫理法人会40周年記念テーマソング『手をつなごう』ほか、歌と語りのひとときです。お申込・空席の確認は名越までお問い合わせください。</p>
-      </div>
-      <div>
+        <p class="lead">セミナーの前夜、池端克章さんのライブと懇親会を開きます。福岡県倫理法人会40周年記念テーマソング『手をつなごう』ほか、心に響く歌と語りで特別なひとときを。お申込・空席の確認は名越までお問い合わせください。</p>
+
+        <blockquote class="eve-quote">
+          <p>『池端さんの温かい詩の世界と優しく響く素敵な歌声は、私たちの心に生きる勇気を与えてくれます。』</p>
+          <cite>イベント実行委員長　名越 雅善</cite>
+        </blockquote>
+
         <dl class="infolist">
           <div class="inforow"><dt>日時</dt><dd><span class="em">2026年9月30日（水）18:30 〜 20:30</span><br>受付開始 18:00</dd></div>
           <div class="inforow"><dt>会場</dt><dd>クロスロードカフェ<br>福岡県久留米市六ツ門町19-13<br>駐車場は近くのコインパーキングをご利用ください</dd></div>
-          <div class="inforow"><dt>参加費</dt><dd>5,000円（食事・飲物付）</dd></div>
-          <div class="inforow"><dt>お問合せ</dt><dd>イベント実行委員長　名越 雅善<br><a href="tel:09074797814">090-7479-7814</a><br><a href="mailto:masayon758@gmail.com">masayon758@gmail.com</a></dd></div>
+          <div class="inforow"><dt>参加費</dt><dd><span class="em">5,000円</span>（食事・飲物付）</dd></div>
+          <div class="inforow"><dt>お問合せ</dt><dd>イベント実行委員長　<ruby>名越<rt>なごや</rt></ruby> 雅善<br><a href="tel:09074797814">090-7479-7814</a><br><a href="mailto:masayon758@gmail.com">masayon758@gmail.com</a></dd></div>
         </dl>
       </div>
     </div>
