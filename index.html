@@ -573,17 +573,13 @@ footer a{color:var(--gold-l)}
         </fieldset>
 
         <div class="field">
-          <label for="chapter">所属<span class="req">必須</span></label>
-          <select id="chapter" name="chapter" required>
-            <option value="会員ではありません" selected>会員ではありません</option>
-            <option value="久留米市東倫理法人会">久留米市東倫理法人会</option>
-            <option value="その他の倫理法人会">その他の倫理法人会</option>
-          </select>
+          <label for="chapter">所属単会名（他単会の方のみ）<span class="opt">任意</span></label>
+          <input type="text" id="chapter" name="chapter" placeholder="例：〇〇市倫理法人会">
         </div>
 
-        <div class="field" id="chapterOtherWrap" hidden>
-          <label for="chapterOther">会名をご記入ください</label>
-          <input type="text" id="chapterOther" name="chapterOther" placeholder="例：北九州市倫理法人会">
+        <div class="field">
+          <label for="referrer">ご紹介者<span class="opt">任意</span></label>
+          <input type="text" id="referrer" name="referrer">
         </div>
 
         <details class="optional">
@@ -592,10 +588,6 @@ footer a{color:var(--gold-l)}
             <div class="field">
               <label for="company">会社名・団体名</label>
               <input type="text" id="company" name="company" autocomplete="organization">
-            </div>
-            <div class="field">
-              <label for="referrer">ご紹介者</label>
-              <input type="text" id="referrer" name="referrer">
             </div>
             <div class="field" style="margin-bottom:0">
               <label for="memo">ご連絡事項</label>
@@ -679,24 +671,11 @@ const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbx_x-Kx0LWRpoUDJ96
   const form = document.getElementById("applyForm");
   const msg  = document.getElementById("formMsg");
   const btn  = document.getElementById("submitBtn");
-  const chapter      = document.getElementById("chapter");
-  const otherWrap    = document.getElementById("chapterOtherWrap");
-  const otherInput   = document.getElementById("chapterOther");
 
   function say(text, kind) {
     msg.textContent = text;
     msg.className = "formmsg" + (kind ? " " + kind : "");
   }
-
-  // 「その他の倫理法人会」を選んだときだけ会名の入力欄を出す
-  function syncChapter() {
-    const isOther = chapter.value === "その他の倫理法人会";
-    otherWrap.hidden = !isOther;
-    otherInput.required = isOther;
-    if (!isOther) otherInput.value = "";
-  }
-  chapter.addEventListener("change", syncChapter);
-  syncChapter();
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -714,16 +693,12 @@ const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbx_x-Kx0LWRpoUDJ96
       return;
     }
 
-    const chapterValue = chapter.value === "その他の倫理法人会"
-      ? otherInput.value.trim()
-      : chapter.value;
-
     const data = {
       event: "第1000回 経営者モーニングセミナー",
       name: form.name.value.trim(),
       kana: form.kana.value.trim(),
       company: form.company.value.trim(),
-      chapter: chapterValue,
+      chapter: form.chapter.value.trim(),
       tel: form.tel.value.trim(),
       email: form.email.value.trim(),
       count: form.count.value,
@@ -746,7 +721,6 @@ const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbx_x-Kx0LWRpoUDJ96
 
       if (result.ok) {
         form.reset();
-        syncChapter();
         say("お申込ありがとうございます。受付番号 " + result.id + " で承りました。確認メールをお送りしましたのでご確認ください。", "ok");
       } else {
         say(result.message || "送信できませんでした。お手数ですが 0942-40-7250 までお電話ください。", "ng");
